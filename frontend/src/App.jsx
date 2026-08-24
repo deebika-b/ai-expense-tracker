@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API = "http://127.0.0.1:8001";
+const API_URL = "https://ai-expense-tracker-ey3z.onrender.com";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ function App() {
       formData.append("username", email);
       formData.append("password", password);
 
-      const response = await fetch(`${API}/users/login`, {
+      const response = await fetch(`${API_URL}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -64,7 +64,7 @@ function App() {
 
   async function loadExpenses(currentToken) {
     try {
-      const response = await fetch(`${API}/expenses/`, {
+      const response = await fetch(`${API_URL}/expenses/`, {
         headers: {
           Authorization: `Bearer ${currentToken}`,
         },
@@ -98,7 +98,7 @@ function App() {
       const formData = new FormData();
       formData.append("file", selectedFile);
 
-      const response = await fetch(`${API}/ai/receipt`, {
+      const response = await fetch(`${API_URL}/ai/receipt`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ function App() {
     setAnalyzing(true);
 
     try {
-      const response = await fetch(`${API}/ai/analyze`, {
+      const response = await fetch(`${API_URL}/ai/analyze`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
