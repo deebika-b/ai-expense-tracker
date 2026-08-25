@@ -25,6 +25,22 @@ Users can:
 
 ---
 
+---
+
+## 📸 Screenshots
+
+### 🔐 Login
+
+![Login](screenshots/login.png)
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### 🤖 AI Spending Analysis
+
+![AI Spending Analysis](screenshots/ai-analysis.png)
+
 ## ✨ Features
 
 ### 🔐 User Authentication
@@ -74,34 +90,35 @@ Each expense is associated with the authenticated user.
 # 🏗️ Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │    React Frontend   │
-                    │                     │
-                    │  Login / Dashboard  │
-                    │  Receipt Upload     │
-                    │  AI Analysis        │
-                    └──────────┬──────────┘
-                               │
-                               │ REST API
-                               ▼
-                    ┌─────────────────────┐
-                    │    FastAPI Backend  │
-                    │                     │
-                    │ Authentication      │
-                    │ Expense APIs        │
-                    │ Receipt API         │
-                    │ AI Analysis API     │
-                    └───────┬───────┬─────┘
-                            │       │
-                            │       │
-                            ▼       ▼
-                 ┌──────────────┐  ┌─────────────────┐
-                 │ PostgreSQL   │  │ LangChain       │
-                 │              │  │       ↓         │
-                 │ Users        │  │      Groq       │
-                 │ Expenses     │  │       ↓         │
-                 └──────────────┘  │ AI Analysis     │
-                                   └─────────────────┘
+                 ┌──────────────────────┐
+                 │    React Frontend    │
+                 │                      │
+                 │  Login               │
+                 │  Dashboard           │
+                 │  Receipt Upload      │
+                 │  AI Analysis         │
+                 └──────────┬───────────┘
+                            │
+                         REST API
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │    FastAPI Backend   │
+                 │                      │
+                 │ Authentication       │
+                 │ Expense Management   │
+                 │ Receipt Processing   │
+                 │ AI Analysis          │
+                 └───────┬───────┬──────┘
+                         │       │
+                         ▼       ▼
+              ┌──────────────┐  ┌─────────────────┐
+              │ PostgreSQL   │  │    LangChain    │
+              │              │  │        ↓        │
+              │ Users        │  │      Groq       │
+              │ Expenses     │  │        ↓        │
+              └──────────────┘  │   AI Insights   │
+                                └─────────────────┘
 🧠 AI Architecture
 
 The project uses LangChain to connect the application with the Groq LLM API.
