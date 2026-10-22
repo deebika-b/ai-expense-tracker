@@ -56,7 +56,7 @@ Keep the insight and recommendation short.
 """
 
     response = client.chat.completions.create(
-    model="qwen/qwen3.6-27b",
+    model=os.getenv("GROQ_TEXT_MODEL", "llama-3.3-70b-versatile"),
     messages=[
         {
             "role": "system",
@@ -68,7 +68,6 @@ Keep the insight and recommendation short.
         }
     ],
     response_format={"type": "json_object"},
-    reasoning_effort="none",
     max_completion_tokens=500,
     temperature=0.7
     )
