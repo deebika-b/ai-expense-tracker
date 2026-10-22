@@ -15,7 +15,7 @@ def analyze_receipt(image_bytes: bytes, content_type: str):
     base64_image = base64.b64encode(image_bytes).decode("utf-8")
 
     response = client.chat.completions.create(
-        model="qwen/qwen3.6-27b",
+        model=os.getenv("GROQ_VISION_MODEL", "qwen/qwen3.8-27b"),
         messages=[
             {
                 "role": "user",
