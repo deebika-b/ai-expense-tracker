@@ -3,6 +3,7 @@
 An AI-powered expense tracking application that automatically extracts expense information from receipts and provides intelligent spending insights.
 
 🚀 **Live Demo:** https://ai-expense-tracker-1-66xa.onrender.com
+   **Demo login:** `demo@expensetracker.com` / `Demo1234!`
 
 🔗 **Backend API:** https://ai-expense-tracker-ey3z.onrender.com
 
@@ -23,23 +24,7 @@ Users can:
 - 🧠 Analyze spending patterns using LangChain and Groq
 - 💡 Receive personalized spending insights and recommendations
 
----
-
----
-
-## 📸 Screenshots
-
-### 🔐 Login
-
-![Login](screenshots/login.png)
-
-### 📊 Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### 🤖 AI Spending Analysis
-
-![AI Spending Analysis](screenshots/ai-analysis.png)
+--
 
 ## ✨ Features
 
@@ -409,17 +394,3 @@ Built with ❤️ using React, FastAPI, PostgreSQL, LangChain and Groq.
 AI-powered receipt extraction + expense management + personalized spending analysis in one full-stack application.
 
 
-### Then save it
-
-If you're using `nano`:
-
-```bash
-Ctrl + O
-Enter
-Ctrl + X
-
-Then run:
-
-git add README.md
-git commit -m "Add professional project README"
-git push
